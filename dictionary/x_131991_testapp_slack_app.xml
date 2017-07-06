@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Slack App" max_length="40" name="x_131991_testapp_slack_app" type="collection">
+        <element label="App Name" max_length="40" name="app_name" type="string"/>
+        <element label="oauth Auth" max_length="40" name="oauth_auth" reference="oauth_entity" type="reference_name"/>
+    </element>
+</database>

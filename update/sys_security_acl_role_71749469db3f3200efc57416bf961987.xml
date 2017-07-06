@@ -2,20 +2,18 @@
 <record_update table="sys_security_acl_role">
     <sys_security_acl_role action="INSERT_OR_UPDATE">
         <sys_class_name>sys_security_acl_role</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-06-05 17:32:45</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>145c16270f033200146206ace1050e40</sys_id>
+        <sys_created_by>raghavan.muthuraman@snc</sys_created_by>
+        <sys_created_on>2017-07-06 09:18:27</sys_created_on>
+        <sys_id>71749469db3f3200efc57416bf961987</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_131991_testapp_table.x_131991_testapp.user</sys_name>
+        <sys_name>x_131991_testapp_slack_app.x_131991_testapp.user</sys_name>
         <sys_package display_value="TestApp" source="x_131991_testapp">805cda230f033200146206ace1050e5e</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="TestApp">805cda230f033200146206ace1050e5e</sys_scope>
-        <sys_security_acl display_value="x_131991_testapp_table">5c5c16270f033200146206ace1050e3d</sys_security_acl>
-        <sys_update_name>sys_security_acl_role_145c16270f033200146206ace1050e40</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-06-05 17:32:45</sys_updated_on>
+        <sys_security_acl display_value="x_131991_testapp_slack_app">31749469db3f3200efc57416bf961978</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_71749469db3f3200efc57416bf961987</sys_update_name>
+        <sys_updated_by>raghavan.muthuraman@snc</sys_updated_by>
+        <sys_updated_on>2017-07-06 09:18:27</sys_updated_on>
         <sys_user_role display_value="x_131991_testapp.user" name="x_131991_testapp.user">c05c16270f033200146206ace1050e23</sys_user_role>
         <transaction_id/>
     </sys_security_acl_role>

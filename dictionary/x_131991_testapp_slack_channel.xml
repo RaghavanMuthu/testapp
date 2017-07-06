@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Slack Channel" max_length="40" name="x_131991_testapp_slack_channel" type="collection">
+        <element label="Channel Name" max_length="40" name="channel_name" type="string"/>
+        <element label="Slack App" max_length="40" name="slack_app" reference="slack_app" type="reference_name"/>
+    </element>
+</database>

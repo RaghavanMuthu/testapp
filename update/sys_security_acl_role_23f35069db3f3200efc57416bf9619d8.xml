@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>raghavan.muthuraman@snc</sys_created_by>
+        <sys_created_on>2017-07-06 09:16:22</sys_created_on>
+        <sys_id>23f35069db3f3200efc57416bf9619d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_131991_testapp_slack_channel.x_131991_testapp.user</sys_name>
+        <sys_package display_value="TestApp" source="x_131991_testapp">805cda230f033200146206ace1050e5e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TestApp">805cda230f033200146206ace1050e5e</sys_scope>
+        <sys_security_acl display_value="x_131991_testapp_slack_channel">e7f35069db3f3200efc57416bf9619d5</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_23f35069db3f3200efc57416bf9619d8</sys_update_name>
+        <sys_updated_by>raghavan.muthuraman@snc</sys_updated_by>
+        <sys_updated_on>2017-07-06 09:16:22</sys_updated_on>
+        <sys_user_role display_value="x_131991_testapp.user" name="x_131991_testapp.user">c05c16270f033200146206ace1050e23</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>
