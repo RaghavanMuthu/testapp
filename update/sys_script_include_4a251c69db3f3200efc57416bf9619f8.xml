@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_131991_testapp.SlackAuthUtil</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SlackAuthUtil</name>
+        <script><![CDATA[var SlackAuthUtil = Class.create();
+SlackAuthUtil.prototype = {
+    initialize: function() {
+    },
+	
+	getSlackToken: function(profileId){
+		var client = new sn_auth.GlideOAuthClient();
+		var oToken = client.getToken(gs.getUserID(),profileId);
+		if(!oToken) return null;
+		var accessToken = oToken.getAccessToken();
+		if(accessToken == null){
+			this.requestUserAuthorization(profileId);
+			return null;
+		}
+		if(this.isExpired(oToken)){
+			//this.refreshToken(profileId)
+			oToken = oToken.getRefreshToken();
+			if(!oToken) return null;
+			accessToken = oToken.getAccessToken();
+		}
+		return {
+			oToken: oToken,
+			token: accessToken,
+			tokenSysId:oToken.getAccessTokenSysID()
+		};
+	},
+	requestUserAuthorization: function(oauthProfileRecId){
+		var gr = new GlideRecord('oauth_entity_profile');
+		gr.addQuery('sys_id','dbcaeb51dbfb3200efc57416bf961915');
+		gr.query();
+		if(!gr.next()) return null;
+		
+		gs.eventQueue('authorize.slack.app',gr,gs.getUserID(),null);
+		var url = '/oauth_initiator.do' +
+		'?oauth_requestor_context=sys_user' +
+		'&oauth_requestor=' + gs.getUserID() +
+		'&oauth_provider_profile=' + gr.sys_id +
+		'&response_type=code';
+		gs.addInfoMessage('Please authorize Slack app.<a href=' + url + '> Click Here</a>');
+	},
+	isExpired: function(token){
+		return token.getExpiresIn() <=0;
+	},
+	refreshToken:function(accessToken,tokenSysId){
+		var gr= new GlideRecord();
+		gr.get(tokenSysId);
+		if(gr.next()){
+			gr.deleteRecord();
+		}
+	},
+    type: 'SlackAuthUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>raghavan.muthuraman@snc</sys_created_by>
+        <sys_created_on>2017-07-06 09:26:59</sys_created_on>
+        <sys_id>4a251c69db3f3200efc57416bf9619f8</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>SlackAuthUtil</sys_name>
+        <sys_package display_value="TestApp" source="x_131991_testapp">805cda230f033200146206ace1050e5e</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TestApp">805cda230f033200146206ace1050e5e</sys_scope>
+        <sys_update_name>sys_script_include_4a251c69db3f3200efc57416bf9619f8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-06 14:32:35</sys_updated_on>
+    </sys_script_include>
+</record_update>
